@@ -9,7 +9,7 @@ import java.util.Scanner; // Memanggil scanner untuk melakukan inputan dari keyb
  * user untuk perhitungan matematika seperti pertambahan, pengurangan, perkalian, pembagian, serta modulus atau hasil bagi
  * 
  * @author Naia Siti Az-zahra
- * @version 1.0
+ * @version 2.0
  * @since 2023-01-28
  */
 
@@ -46,16 +46,23 @@ public class W2Berhitung {
                     System.out.println(hasil);
                 }
                 case '/' -> { // Jika operator "/" maka akan dilakukan pembagian angka1 / angka2
-                    hasil = angka1 / angka2;
-                    System.out.println(hasil);
+                    if (angka1 % angka2 == 0) {
+                        hasil = angka1 / angka2;
+                        System.out.println(hasil);
+                    } else {
+                        System.out.println("angka1 tidak habis dibagi angka2.");
+                    }
                 }
                 case '%' -> { // Jika operator "%" maka akan dilakukan hasil bagi angka1 % angka2
                     hasil = angka1 % angka2;
                     System.out.println(hasil);
                 }
                 default -> {
+                    System.out.println("Terdapat kesalahan!");
                 }
             }
+        } else {
+            System.out.println("Input tidak valid!");
         }
     }
     
